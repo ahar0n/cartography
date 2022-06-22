@@ -6,7 +6,7 @@ Funciones de Matlab para tratar con la conversión entre diferentes sistemas de 
 
 | Función | Descripción |
 | ------- | ----------- |
-| `get_ellipsoid()` | Obtener parámetros de elipsoides a partir de su código [EPSG](https://epsg.org/home.html). |
+| `ellipsoid()` | Obtener parámetros de elipsoides a partir de su código [EPSG](https://epsg.org/home.html). |
 | `geo2tm()` | Conversión de [coordenadas geodésicas](https://en.wikipedia.org/wiki/Geodetic_coordinates) (&varphi;, &lambda;) a coordenadas proyectadas usando el sistema [Transverse Mercator](https://en.wikipedia.org/wiki/Transverse_Mercator_projection) (N,E).|
 | `tm2geo()` | Conversión de coordenadas proyectadas [Transverse Mercator](https://en.wikipedia.org/wiki/Transverse_Mercator_projection) (N,E) a [coordenadas geodésicas](https://en.wikipedia.org/wiki/Geodetic_coordinates) (&varphi;, &lambda;). |
 | `geo2ecef()` | Conversión de [coordenadas geodésicas](https://en.wikipedia.org/wiki/Geodetic_coordinates) (&varphi;, &lambda;, h) a [coordenadas cartesianas geocéntricas tridimensionales](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system) (X,Y,Z). |
@@ -17,7 +17,7 @@ Funciones de Matlab para tratar con la conversión entre diferentes sistemas de 
 Obtener parámetros del elipsoide GRS80:
 
 ```matlab
-GRS80 = get_ellipsoid(7019)
+GRS80 = ellipsoid(7019)
 GRS80 =
   struct with fields:
 
@@ -60,7 +60,7 @@ MC = -69;
 K0 = 0.9996;
 [lat, lon] = tm2geo(6958579.443, 363102.736, WGS84, MC, K0, FN, FE)
 lati =
-   -27.4895228552174
+  -27.4895228552174
 long =
   -70.3857747273678
 ```
